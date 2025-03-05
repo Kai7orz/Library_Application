@@ -1,0 +1,41 @@
+.iniContainer{
+    width:100%;
+}
+
+.hContainer{
+    padding-bottom: 50px;
+    padding-top:50px;
+    background-color:rgb(29, 30, 61);
+    color:white;
+    width:100%;
+}
+
+#mySearch{
+    position: relative;
+    top:-50px;
+    width:100%;
+}
+
+#search{
+    width:50%;
+}
+
+.bodyContainer{
+    margin:5%;
+    padding-bottom:30%;
+    margin:0 auto;
+    width:80%;
+    height:60%;
+    border: 1px solid #ada9a9;  
+    overflow: scroll;
+}
+
+.card-img{
+    width:30%;
+    margin-right:10%;
+}
+
+
+.myColor{
+    background-color: rgb(241, 238, 238);
+}
