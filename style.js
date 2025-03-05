@@ -7,7 +7,6 @@ let myButton = document.getElementById("mbutton")
 let bodyContainer = document.getElementById("desc")
 
 function generateCard(answer,isbn){
-
     let card 
     let names 
     let targetIsbn = "ISBN:"+isbn
@@ -15,9 +14,7 @@ function generateCard(answer,isbn){
     for(a in answer){
         names = answer[a].subjects.map(subject => subject.name)
     }
-    for( n of names){
-        console.log(n)
-    }
+
     card = `
     <div class="d-flex mr-2 w-100">    
         <img src="${answer[targetIsbn].cover.medium}" class="card-img p-3" alt="">
@@ -68,10 +65,20 @@ function getInfo(){
         return response.json()
     }).then(
         answer=>{
-//        console.log(JSON.stringify(answer))
+            console.log(answer)
+            console.log(Object.keys(answer).length===0)
+        if (Object.keys(answer).length!==0){
         bodyContainer.innerHTML = generateCard(answer,isbn)
-    })
+         }
+         else{
+            bodyContainer.innerHTML = "Not Found"
+         }
+
+
+
+})
 }
+
 
 fetch(config.url).then(response=>{
     return response.json()}).then(
